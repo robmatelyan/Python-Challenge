@@ -66,5 +66,21 @@ with open(csvpath, "r") as csvfile:
     print(f"{candidates[2]}: {can3_percentage}% ({can_3}) \n")
     print(f"{candidates[3]}: {can4_percentage}% ({can_4}) \n")
     print("--------------- \n")
-    print(f"Winner: {winner_name}")
+    print(f"Winner: {winner_name} \n")
     print("--------------- \n")
+
+# Write to a text file
+output_path = os.path.join("Analysis", "results.txt")
+
+with open(output_path, 'w') as file:
+    file.write("Election Results \n")
+    file.write("--------------- \n")
+    file.write(f"Total Votes: {total_votes} \n")
+    file.write("--------------- \n")
+    file.write (f"{candidates[0]}: {can1_percentage}% ({can_1}) \n")
+    file.write(f"{candidates[1]}: {can2_percentage}% ({can_2}) \n")
+    file.write(f"{candidates[2]}: {can3_percentage}% ({can_3}) \n")
+    file.write(f"{candidates[3]}: {can4_percentage}% ({can_4}) \n")
+    file.write("--------------- \n")
+    file.write(f"Winner: {winner_name} \n")
+    file.write("--------------- \n")
