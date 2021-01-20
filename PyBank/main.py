@@ -78,3 +78,4 @@ with open(output_path, 'w') as file:
     file.write(f"Greatest Increase in Profits: {max_date} $({maximum}) \n")
     file.write(f"Greatest Decrease in Profits: {min_date} S({minimum})") 
 
+    
