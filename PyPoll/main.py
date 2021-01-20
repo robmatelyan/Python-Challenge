@@ -34,6 +34,7 @@ with open(csvpath, "r") as csvfile:
             can_3 += 1
         elif row[2] == candidates[3]:
             can_4 += 1
+        
 
             
     #calculate candidate percentage of vote total
@@ -49,12 +50,21 @@ with open(csvpath, "r") as csvfile:
     can4_percentage = int(can_4) / int(total_votes) * 100
     can4_percentage = round(can4_percentage, 2)
 
+    # Determine Winner
+    candidate_count = [can_1, can_2, can_3, can_4]
+    winner = max(candidate_count)
+    candidate_count_index = candidate_count.index(winner)
+    winner_name = candidates[candidate_count_index]
+
 # print statements:
     print("Election Results \n")
     print("--------------- \n")
     print(f"Total Votes: {total_votes} \n")
     print("--------------- \n")
     print(f"{candidates[0]}: {can1_percentage}% ({can_1}) \n")
-    print(f"{candidates[0]}: {can1_percentage}% ({can_1}) \n")
-    print(f"{candidates[0]}: {can1_percentage}% ({can_1}) \n")
-    print(f"{candidates[0]}: {can1_percentage}% ({can_1}) \n")
+    print(f"{candidates[1]}: {can2_percentage}% ({can_2}) \n")
+    print(f"{candidates[2]}: {can3_percentage}% ({can_3}) \n")
+    print(f"{candidates[3]}: {can4_percentage}% ({can_4}) \n")
+    print("--------------- \n")
+    print(f"Winner: {winner_name}")
+    print("--------------- \n")
