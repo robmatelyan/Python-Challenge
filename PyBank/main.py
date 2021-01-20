@@ -38,7 +38,7 @@ with open(csvpath, 'r') as csvfile:
     limit_dec = round(avg_change, 2)
 
 
-    # Deermine Greatest Increase in Profits and Greatest Decrease in Losses by Month/Year
+    # Determine Greatest Increase in Profits and Greatest Decrease in Losses by Month/Year
     
     for i in range(1, len(profit_losses)):
         change_by_month = int(profit_losses[i]) - int(profit_losses[i-1])
@@ -60,7 +60,6 @@ with open(csvpath, 'r') as csvfile:
     print('----------------------')
     print(f"Total Months = {total_month}")
     print(f"Total Amount = ${total_amount}")
-    print(f"changes = ${change}")
     print(f"Average Change = ${limit_dec}")
     print(f"Greatest Increase in Profits: {max_date} $({maximum})") 
     print(f"Greatest Decrease in Profits: {min_date} S({minimum})") 
@@ -73,7 +72,6 @@ with open(output_path, 'w') as file:
     file.write('---------------------- \n')
     file.write(f"Total Months = {total_month} \n")
     file.write(f"Total Amount = ${total_amount} \n")
-    file.write(f"changes = ${change} \n")
     file.write(f"Average Change = ${limit_dec} \n")
     file.write(f"Greatest Increase in Profits: {max_date} $({maximum}) \n")
     file.write(f"Greatest Decrease in Profits: {min_date} S({minimum})") 
